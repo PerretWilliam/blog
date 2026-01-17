@@ -1,0 +1,93 @@
+{
+  "header": {
+    "navbar": {
+      "home": "accueil",
+      "newsletter": "newsletter",
+      "blog": "blog"
+    },
+    "about": "Étudiant en informatique et développement web."
+  },
+
+  "home": {
+    "title": "Salut, moi c'est William",
+    "bio": "Étudiant en deuxième année de BUT Informatique et passionné par le développement web moderne. Je documente mon apprentissage ici.",
+    "recentPosts": "Articles récents",
+    "seeAll": "Voir tout"
+  },
+
+  "newsletter": {
+    "title": "Restons en contact",
+    "description": "Abonnez-vous à ma newsletter pour recevoir les dernières mises à jour directement dans votre boîte mail.",
+    "cta": "S'abonner",
+    "benefits": [
+      {
+        "title": "Directement dans ta boîte",
+        "desc": "Pas d'algorithme, juste du contenu pur."
+      },
+      {
+        "title": "Contenu Exclusif",
+        "desc": "Des astuces dev que je ne publie pas sur le blog."
+      },
+      {
+        "title": "Zéro Spam",
+        "desc": "Un mail par mois maximum. Désinscription en un clic."
+      }
+    ],
+    "footer": "En t'abonnant, tu acceptes de recevoir mes emails. Promis, je prends soin de tes données.",
+
+    "unsubscribe": {
+      "title": "C'est fait !",
+      "description": "L'adresse <strong>{email}</strong> a été retirée de la liste. Tu ne recevras plus d'emails de ma part.",
+      "back": "Retour au blog"
+    }
+  },
+
+  "blog": {
+    "description": "Mes articles et notes techniques",
+    "readArticle": "Lire l'article",
+    "noPosts": "Aucun article pour le moment."
+  },
+
+  "post": {
+    "size": {
+      "small": "Petit",
+      "base": "Normal",
+      "large": "Grand",
+      "extraLarge": "Très grand"
+    },
+    "next": "Suivant",
+    "previous": "Précédent",
+    "randomPost": "Au hasard",
+    "tags": "Étiquettes",
+    "toc": "Sommaire"
+  },
+
+  "tags": {
+    "tags": "Étiquettes",
+    "articlesFound": "article(s) trouvé(s)",
+    "noTags": "Aucune étiquette pour le moment."
+  },
+
+  "footer": {
+    "inspiredBy": "Grandement inspiré par Cassidy Williams !"
+  },
+
+  "metadata": {
+    "home": {
+      "title": "Accueil",
+      "description": "Bienvenue sur mon blog personnel où je partage mes aventures dans le développement web moderne et mes apprentissages en informatique."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Abonnez-vous à ma newsletter pour recevoir des mises à jour exclusives, des astuces de développement web, et plus encore directement dans votre boîte mail."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Explorez mes articles techniques et notes sur le développement web moderne, les meilleures pratiques, et mes expériences d'apprentissage."
+    },
+    "tags": {
+      "title": "Article sur {decodedTag}",
+      "description": "Découvrez tous mes articles traitant de {decodedTag}."
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "header": {
+    "navbar": {
+      "home": "home",
+      "newsletter": "newsletter",
+      "blog": "blog"
+    },
+    "about": "Student in computer science and web development."
+  },
+
+  "home": {
+    "title": "Hi, I'm William",
+    "bio": "Second-year Computer Science student passionate about modern web development. I document my learning here.",
+    "recentPosts": "Recent Posts",
+    "seeAll": "See All"
+  },
+
+  "newsletter": {
+    "title": "Stay in Touch",
+    "description": "Subscribe to my newsletter to get the latest updates directly in your inbox.",
+    "cta": "Subscribe",
+    "benefits": [
+      {
+        "title": "Directly in Your Inbox",
+        "desc": "No algorithms, just pure content."
+      },
+      {
+        "title": "Exclusive Content",
+        "desc": "Dev tips I don't publish on the blog."
+      },
+      {
+        "title": "No Spam",
+        "desc": "One email per month max. Unsubscribe with one click."
+      }
+    ],
+    "unsubscribe": {
+      "title": "Done!",
+      "description": "The address <strong>{email}</strong> has been removed from the list. You will no longer receive emails from me.",
+      "back": "Back to the blog"
+    },
+    "footer": "By subscribing, you agree to receive my emails. I promise to take care of your data."
+  },
+
+  "blog": {
+    "description": "My articles and technical notes",
+    "readArticle": "Read the article",
+    "noPosts": "No posts at the moment."
+  },
+
+  "post": {
+    "size": {
+      "small": "Small",
+      "base": "Normal",
+      "large": "Large",
+      "extraLarge": "Extra Large"
+    },
+    "next": "Next",
+    "previous": "Previous",
+    "randomPost": "Random",
+    "tags": "Tags",
+    "toc": "Table of Contents"
+  },
+
+  "tags": {
+    "tags": "Tags",
+    "articlesFound": "article(s) found",
+    "noTags": "No tags at the moment."
+  },
+
+  "footer": {
+    "inspiredBy": "Heavily inspired by Cassidy Williams!"
+  },
+
+  "metadata": {
+    "home": {
+      "title": "Home",
+      "description": "Welcome to my personal blog where I share my adventures in modern web development and computer science learning."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to my newsletter to receive exclusive updates, web development tips, and more directly in your inbox."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Explore my technical articles and notes on modern web development, best practices, and learning experiences."
+    },
+    "tags": {
+      "title": "Article about {decodedTag}",
+      "description": "Discover all my articles about {decodedTag}."
+    }
+  }
+}
