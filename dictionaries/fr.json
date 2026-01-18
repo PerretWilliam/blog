@@ -33,12 +33,22 @@
         "desc": "Un mail par mois maximum. Désinscription en un clic."
       }
     ],
+    "thanks": "Merci de ton inscription !",
     "footer": "En t'abonnant, tu acceptes de recevoir mes emails. Promis, je prends soin de tes données.",
 
     "unsubscribe": {
       "title": "C'est fait !",
       "description": "L'adresse <strong>{email}</strong> a été retirée de la liste. Tu ne recevras plus d'emails de ma part.",
       "back": "Retour au blog"
+    },
+
+    "action": {
+      "invalidEmail": "Adresse email invalide.",
+      "alreadySubscribed": "Vous êtes déjà abonné !",
+      "resubscribedError": "Une erreur est survenue lors de la réinscription.",
+      "welcome": "Bienvenue dans la newsletter !",
+      "sendEmailError": "Erreur lors de l'envoi de l'email de bienvenue.",
+      "ServerError": "Erreur serveur. Veuillez réessayer plus tard."
     }
   },
 

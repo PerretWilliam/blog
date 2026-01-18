@@ -38,10 +38,6 @@ export default async function UnsubscribePage({
   // If a valid email is provided, attempt to unsubscribe the user
   if (decodedEmail) {
     try {
-      console.log(
-        `Attempting to unsubscribe: ${decodedEmail} (Audience: ${process.env.BLOG_AUDIENCE_ID})`,
-      );
-
       // Call the Resend API to update the user's subscription status
       const response = await resend.contacts.update({
         email: decodedEmail,

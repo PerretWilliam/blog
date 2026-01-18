@@ -89,7 +89,7 @@ export default async function NewsletterPage({
 
         {/* The Form (Client Utility) */}
         <div className="w-full pt-6 flex justify-center">
-          <NewsletterForm cta={dict.newsletter.cta} lang={lang} />
+          <NewsletterForm lang={lang} dict={dict} />
         </div>
 
         {/* Benefits Section */}

@@ -5,7 +5,7 @@ import { subscribeToNewsletter } from "@/app/actions/newsletter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IconLoader2, IconCheck } from "@tabler/icons-react";
-import { Locale } from "@/dictionaries/dictionaries";
+import { Dictionary, Locale } from "@/dictionaries/dictionaries";
 
 type NewsletterState = {
   error?: string;
@@ -15,16 +15,16 @@ type NewsletterState = {
 /**
  * Renders the newsletter subscription form.
  * @param {Object} props - The properties passed to the component.
- * @param {string} props.cta - The call-to-action text displayed on the submit button.
  * @param {Locale} props.lang - The language locale used for the subscription process.
+ * @param {Dictionary} props.dict - The dictionary object containing localized strings.
  * @returns {JSX.Element} The rendered newsletter form component.
  */
 export function NewsletterForm({
-  cta,
   lang,
+  dict,
 }: {
-  cta: string;
   lang: Locale;
+  dict: Dictionary;
 }): React.JSX.Element {
   const [state, formAction, isPending] = useActionState<
     NewsletterState,
@@ -43,7 +43,7 @@ export function NewsletterForm({
   if (state?.success) {
     return (
       <div className="flex items-center gap-2 text-green-600 font-medium py-2 animate-in fade-in zoom-in-95">
-        <IconCheck size={20} /> Merci de ton inscription !
+        <IconCheck size={20} /> {dict.newsletter.thanks}
       </div>
     );
   }
@@ -60,7 +60,11 @@ export function NewsletterForm({
           className={`bg-background ${state?.error ? "border-destructive ring-destructive" : ""}`}
         />
         <Button variant="newsLetter" type="submit" disabled={isPending}>
-          {isPending ? <IconLoader2 className="animate-spin h-4 w-4" /> : cta}
+          {isPending ? (
+            <IconLoader2 className="animate-spin h-4 w-4" />
+          ) : (
+            dict.newsletter.cta
+          )}
         </Button>
       </form>
       {state?.error && (

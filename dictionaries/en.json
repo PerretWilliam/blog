@@ -19,6 +19,7 @@
     "title": "Stay in Touch",
     "description": "Subscribe to my newsletter to get the latest updates directly in your inbox.",
     "cta": "Subscribe",
+    "thanks": "Thank you for subscribing!",
     "benefits": [
       {
         "title": "Directly in Your Inbox",
@@ -38,6 +39,16 @@
       "description": "The address <strong>{email}</strong> has been removed from the list. You will no longer receive emails from me.",
       "back": "Back to the blog"
     },
+
+    "action": {
+      "invalidEmail": "Invalid email address.",
+      "alreadySubscribed": "You are already subscribed!",
+      "resubscribedError": "An error occurred while resubscribing.",
+      "welcome": "Welcome to the newsletter!",
+      "sendEmailError": "Error sending the welcome email.",
+      "ServerError": "Server error. Please try again later."
+    },
+
     "footer": "By subscribing, you agree to receive my emails. I promise to take care of your data."
   },
 

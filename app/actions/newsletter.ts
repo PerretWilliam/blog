@@ -5,7 +5,7 @@ import { Resend } from "resend";
 import fs from "fs";
 import path from "path";
 import handlebars from "handlebars";
-import { Locale } from "@/dictionaries/dictionaries";
+import { getDictionary, Locale } from "@/dictionaries/dictionaries";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -46,11 +46,13 @@ export async function subscribeToNewsletter(
   const email = formData.get("email") as string;
   const validatedFields = schema.safeParse({ email });
 
+  const dict = await getDictionary(lang);
+
   if (!validatedFields.success) {
     return {
       error:
-        validatedFields.error.flatten().fieldErrors.email?.[0] ||
-        "Invalid email",
+        validatedFields.error.issues[0].message ||
+        dict.newsletter.action.invalidEmail,
     };
   }
 
@@ -67,10 +69,7 @@ export async function subscribeToNewsletter(
     if (existingContact) {
       if (existingContact.unsubscribed === false) {
         return {
-          error:
-            lang === "fr"
-              ? "You are already subscribed!"
-              : "Already subscribed!",
+          error: dict.newsletter.action.alreadySubscribed,
         };
       }
 
@@ -83,7 +82,7 @@ export async function subscribeToNewsletter(
 
       if (updateError) {
         console.error("Update Error:", updateError);
-        return { error: "Error during re-subscription." };
+        return { error: dict.newsletter.action.resubscribedError };
       }
     } else {
       // New subscription case
@@ -95,7 +94,7 @@ export async function subscribeToNewsletter(
 
       if (createError) {
         console.error("Create Error:", createError);
-        return { error: "Error during subscription." };
+        return { error: dict.newsletter.action.resubscribedError };
       }
     }
 
@@ -129,20 +128,20 @@ export async function subscribeToNewsletter(
     const { error: mailError } = await resend.emails.send({
       from: "William <newsletter@william-perret.fr>",
       to: userEmail,
-      subject: lang === "fr" ? "Welcome to my blog!" : "Welcome to my blog!",
+      subject: dict.newsletter.action.welcome,
       html: htmlToSend,
     });
 
     if (mailError) {
       console.error("Email Send Error (Resend Details):", mailError);
       return {
-        error: "Subscription successful, but failed to send the welcome email.",
+        error: dict.newsletter.action.sendEmailError,
       };
     }
 
     return { success: true };
   } catch (e) {
     console.error("Global Server Error:", e);
-    return { error: "Server error." };
+    return { error: dict.newsletter.action.ServerError };
   }
 }

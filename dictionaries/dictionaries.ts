@@ -42,6 +42,9 @@ export const hasLocale = (locale: string): locale is Locale =>
  */
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
 
+/** Export Dictionary type */
+export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+
 /**
  * Retrieves the list of available locales.
  * @returns {Locale[]} An array of available locale keys.

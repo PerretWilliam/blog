@@ -1,141 +1,280 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenue à la Newsletter</title>
-  <style>
-    /* Reset & Base */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #fdfcf8; /* --background */
-      color: #252524; /* --foreground */
-      margin: 0;
-      padding: 0;
-      -webkit-font-smoothing: antialiased;
-    }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Newsletter</title>
+    <style>
+      /* Reset & Base */
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        background-color: #fdfcf8; /* --background */
+        color: #252524; /* --foreground */
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-    .wrapper {
-      width: 100%;
-      table-layout: fixed;
-      background-color: #fdfcf8;
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
+      .wrapper {
+        width: 100%;
+        background-color: #fdfcf8;
+        padding: 60px 20px;
+      }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #ffffff; /* --card */
-      border: 1px solid #ebebeb; /* --border */
-      border-radius: 8px; /* --radius */
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff; /* --card */
+        border: 1px solid #ebebeb; /* --border */
+        border-radius: 7px; /* --radius */
+        overflow: hidden;
+        box-shadow:
+          0 1px 3px rgba(0, 0, 0, 0.02),
+          0 1px 2px rgba(0, 0, 0, 0.06);
+      }
 
-    /* Header */
-    .header {
-      background-color: #de3538; /* --newsletter (oklch 0.577 0.245 27.325) */
-      padding: 40px 20px;
-      text-align: center;
-    }
+      /* Header with gradient accent */
+      .header {
+        background: linear-gradient(
+          135deg,
+          #de3538 0%,
+          #e8524e 100%
+        ); /* --newsletter gradient */
+        padding: 48px 32px;
+        text-align: center;
+        position: relative;
+      }
 
-    .header h1 {
-      color: #ffffff;
-      font-size: 28px;
-      font-weight: 800;
-      margin: 0;
-      letter-spacing: -0.025em;
-    }
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+      }
 
-    /* Content */
-    .content {
-      padding: 40px 30px;
-    }
+      .header h1 {
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.03em;
+      }
 
-    .content p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0 0 20px;
-    }
+      .header-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        margin-top: 8px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
 
-    /* Button */
-    .button-container {
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
+      /* Content */
+      .content {
+        padding: 48px 40px;
+      }
 
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #009b7e; /* --primary (oklch 0.6 0.13 163) */
-      color: #ffffff !important; /* --primary-foreground */
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
+      .content p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #252524;
+        margin: 0 0 24px;
+      }
 
-    /* Footer */
-    .footer {
-      background-color: #f7f7f5; /* --muted */
-      color: #8d8a83; /* --muted-foreground */
-      padding: 20px;
-      text-align: center;
-      font-size: 13px;
-    }
+      .content strong {
+        color: #252524;
+        font-weight: 600;
+      }
 
-    .footer a {
-      color: #009b7e; /* --primary */
-      text-decoration: underline;
-    }
+      .greeting {
+        font-size: 18px;
+        color: #252524;
+        margin-bottom: 24px;
+      }
 
-    .footer-copy {
-      margin-top: 10px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="header">
-        <h1>William Perret</h1>
-      </div>
+      .highlight-box {
+        background-color: #f7f7f5; /* --muted */
+        border-left: 3px solid #009b7e; /* --primary */
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 4px;
+      }
 
-      <div class="content">
-        <p><strong>Bonjour,</strong></p>
-        <p>
-          Merci de t'être inscrit à ma newsletter ! Je suis ravi de te compter parmi mes lecteurs.
-        </p>
-        <p>
-          Tu recevras périodiquement des nouvelles sur mes projets en <strong>BUT Informatique</strong>, des astuces de développement et mes derniers articles.
-        </p>
-        
-        <div class="button-container">
-          <a href="{{blogUrl}}" class="button">Découvrir mes projets</a>
+      .highlight-box p {
+        margin: 0;
+        color: #383835;
+        font-size: 15px;
+      }
+
+      /* Button */
+      .button-container {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 14px 32px;
+        background-color: #009b7e; /* --primary */
+        color: #f4faf8 !important; /* --primary-foreground */
+        text-decoration: none;
+        border-radius: 5px; /* --radius-md */
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+
+      .button:hover {
+        background-color: #008a6f;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .signature {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #ebebeb;
+      }
+
+      .signature p {
+        margin: 4px 0;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #f7f7f5; /* --muted */
+        color: #8d8a83; /* --muted-foreground */
+        padding: 32px 40px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer p {
+        margin: 0 0 16px;
+      }
+
+      .footer strong {
+        color: #383835;
+      }
+
+      .footer a {
+        color: #009b7e; /* --primary */
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 155, 126, 0.3);
+        transition: border-color 0.2s;
+      }
+
+      .footer a:hover {
+        border-bottom-color: #009b7e;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background-color: #ebebeb;
+        margin: 20px auto;
+        max-width: 200px;
+      }
+
+      .footer-copy {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #8d8a83;
+        letter-spacing: 0.02em;
+      }
+
+      /* Responsive */
+      @media only screen and (max-width: 600px) {
+        .wrapper {
+          padding: 20px 10px;
+        }
+        .header {
+          padding: 32px 24px;
+        }
+        .header h1 {
+          font-size: 26px;
+        }
+        .content {
+          padding: 32px 24px;
+        }
+        .footer {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- Header -->
+        <div class="header">
+          <h1>William Perret</h1>
+          <div class="header-subtitle">Newsletter</div>
         </div>
 
-        <p style="margin-bottom: 0;">À très vite,</p>
-        <p><strong>William</strong></p>
-      </div>
+        <!-- Content -->
+        <div class="content">
+          <p class="greeting"><strong>Hello and welcome! 👋</strong></p>
+          <p>
+            Thank you for subscribing to my newsletter. I am thrilled to have
+            you among my readers and to have the opportunity to share my journey
+            and discoveries with you.
+          </p>
 
-      <div class="footer">
-        <p>
-          Cet email a été envoyé à <strong>{{email}}</strong> car tu t'es inscrit sur mon blog.
-          <br>
-          Plus envie de recevoir de messages ? 
-          <a href="{{unsubscribeUrl}}">Se désabonner ici</a>.
-        </p>
-        <div class="footer-copy">
-          &copy; 2026 William Perret. Built with Next.js & Resend.
+          <div class="highlight-box">
+            <p>
+              <strong>What's in store:</strong>
+              my projects in Computer Science, development tips, experience
+              sharing, and my latest articles on the technologies I am
+              passionate about.
+            </p>
+          </div>
+
+          <p>
+            Each edition will be an opportunity to dive into technical topics,
+            discover my new projects, and share resources that have helped me in
+            my learning journey.
+          </p>
+
+          <div class="button-container">
+            <a href="https://william-perret.fr" class="button">Check out my
+              portfolio</a>
+          </div>
+
+          <div class="signature">
+            <p style="margin-bottom: 8px;">See you soon,</p>
+            <p><strong>William</strong></p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <p>
+            This email was sent to
+            <strong>{{email}}</strong>
+            because you subscribed on my blog.
+          </p>
+          <p>
+            Don't want to receive these messages anymore?<br />
+            <a href="{{unsubscribeUrl}}">Unsubscribe from the newsletter</a>
+          </p>
+          <div class="footer-divider"></div>
+          <div class="footer-copy">
+            © 2026 William Perret · Built with Next.js & Resend
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

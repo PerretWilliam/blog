@@ -131,7 +131,7 @@ export default async function Page({
             </p>
           </div>
           <div className="w-full lg:w-auto shrink-0">
-            <NewsletterForm cta={dict.newsletter.cta} lang={lang} />
+            <NewsletterForm lang={lang} dict={dict} />
           </div>
         </div>
       </section>
